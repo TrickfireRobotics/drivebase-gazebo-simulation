@@ -1,0 +1,25 @@
+services:
+  rover-sim:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    image: rover-sim:humble-garden
+    container_name: rover-sim
+    environment:
+      - DISPLAY=${DISPLAY:-host.docker.internal:0}
+      - QT_X11_NO_MITSHM=1
+      - LIBGL_ALWAYS_INDIRECT=0
+      - LIBGL_DRI3_DISABLE=1
+      - LIBGL_ALWAYS_SOFTWARE=1
+      - GALLIUM_DRIVER=llvmpipe
+      - MESA_GL_VERSION_OVERRIDE=4.1
+      - MESA_GLSL_VERSION_OVERRIDE=410
+      - QT_QUICK_BACKEND=software
+    env_file:
+      - ./docker/gazebo.env
+    volumes:
+      - ./ros2_ws:/ws/ros2_ws:cached
+    stdin_open: true
+    tty: true
+    platform: linux/amd64
+    user: "${UID:-1000}:${GID:-1000}"
