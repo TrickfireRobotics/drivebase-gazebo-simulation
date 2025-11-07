@@ -1,6 +1,6 @@
 # TrickFire Rover Drivebase Simulation — Cross‑Platform Setup (Docker + ROS 2 Humble + Gazebo Garden)
 
-This repo gives your team a **reproducible** environment for simulating the rover drivebase using **ROS 2 Humble**, **Gazebo (Garden)**, and the **ros_gz** bridge — all inside Docker. It runs on **macOS**, **Windows (WSL2)**, and **Linux** with identical commands.
+This repo gives drivebase a **reproducible** environment for simulating the rover drivebase using **ROS 2 Humble**, **Gazebo (Garden)**, and the **ros_gz** bridge — all inside Docker. It runs on **macOS**, **Windows (WSL2)**, and **Linux** with identical commands.
 
 ---
 
