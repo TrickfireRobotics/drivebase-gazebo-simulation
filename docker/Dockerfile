@@ -26,16 +26,16 @@ RUN add-apt-repository universe && apt-get update
 
 # --- Install ROS dev helpers via pip (more reliable across arches) ---
 RUN pip3 install --no-cache-dir -U \
-      colcon-common-extensions \
-      vcstool \
-      rosdep
+    colcon-common-extensions \
+    vcstool \
+    rosdep
 
 # -------------------------
 # ROS 2 Humble
 # -------------------------
 RUN apt-get update && apt-get install -y curl gnupg2 && \
     curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
-      | gpg --dearmor -o /usr/share/keyrings/ros-archive-keyring.gpg && \
+    | gpg --dearmor -o /usr/share/keyrings/ros-archive-keyring.gpg && \
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
     http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
     > /etc/apt/sources.list.d/ros2.list
