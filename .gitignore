@@ -1,0 +1,53 @@
+# --- OS / Editors ---
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.fseventsd
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.eggs/
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+
+# --- ROS 2 (colcon) workspace ---
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+.colcon*/              # any stray colcon metadata
+
+# --- C/C++ byproducts (if you add C++ later) ---
+**/*.o
+**/*.a
+**/*.so
+**/*.lo
+**/*.la
+**/*.out
+
+# --- Gazebo / sim temp (only if you create these in-repo) ---
+*.log
+*.state
+
+# --- Node / web (if present) ---
+node_modules/
+dist/
+build/
+
+# --- Docker / env files ---
+*.env
+!docker/gazebo.env     # keep the one your compose uses
+
+# --- Misc ---
+*.swp
+*.swo
