@@ -1,0 +1,29 @@
+# VCS
+.git
+.gitignore
+
+# OS/editor
+.DS_Store
+.vscode
+.idea
+
+# Workspace outputs
+ros2_ws/build
+ros2_ws/install
+ros2_ws/log
+**/__pycache__
+
+# Node/web (if present)
+node_modules
+dist
+build
+
+# Python
+*.egg-info
+.venv
+venv
+env
+.pytest_cache
+
+# Logs
+*.log
