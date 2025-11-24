@@ -234,7 +234,7 @@ Your host folder `./ros2_ws` is mounted into the container at `/ws/ros2_ws`. Tha
 
 ## Troubleshooting
 
-**“Unable to open display” on macOS**  
+**“Unable to open display” on macOS**
 - Ensure XQuartz is running and `export DISPLAY=:0` in your host shell.
 - Run:
   ```bash
@@ -242,7 +242,7 @@ Your host folder `./ros2_ws` is mounted into the container at `/ws/ros2_ws`. Tha
   /opt/X11/bin/xhost + localhost
   ```
 
-**Gazebo GUI crashes with OpenGL errors (Qt can’t create context)**  
+**Gazebo GUI crashes with OpenGL errors (Qt can’t create context)**
 - We ship software rendering fallbacks (Mesa llvmpipe) via environment variables in **docker-compose.yml**.
 - If needed, add in-container for your session:
   ```bash
@@ -250,16 +250,16 @@ Your host folder `./ros2_ws` is mounted into the container at `/ws/ros2_ws`. Tha
   gz sim -v 3 -r empty.sdf
   ```
 
-**Packages not found at build-time (apt)**  
+**Packages not found at build-time (apt)**
 - The Dockerfile enables `universe` and pins correct Gazebo repo (`ubuntu-stable … main`). Rebuild with:
   ```bash
   docker compose build --no-cache
   ```
 
-**Apple Silicon quirkiness**  
+**Apple Silicon quirkiness**
 - Compose forces `platform: linux/amd64` for maximum compatibility on M‑series Macs.
 
-**Windows: no GUI shows**  
+**Windows: no GUI shows**
 - Confirm VcXsrv is running and `DISPLAY=host.docker.internal:0` is exported before `docker exec`.
 - If still stuck, temporarily loosen access control in VcXsrv to verify it’s a permissions issue.
 
