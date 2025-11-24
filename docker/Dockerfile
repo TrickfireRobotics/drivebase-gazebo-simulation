@@ -1,6 +1,7 @@
 # =========================
 # Base: Ubuntu 22.04 (ROS 2 Humble + Gazebo Garden + ros_gz bridge)
 # =========================
+
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -33,6 +34,7 @@ RUN pip3 install --no-cache-dir -U \
 # -------------------------
 # ROS 2 Humble
 # -------------------------
+
 RUN apt-get update && apt-get install -y curl gnupg2 && \
     curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
     | gpg --dearmor -o /usr/share/keyrings/ros-archive-keyring.gpg && \
@@ -51,6 +53,7 @@ RUN apt-get update && apt-get install -y \
 # -------------------------
 # Gazebo (Garden) + ros_gz
 # -------------------------
+
 # Gazebo (Garden) + ros_gz — correct repo path
 RUN wget https://packages.osrfoundation.org/gazebo.gpg -O - | gpg --dearmor -o /usr/share/keyrings/gazebo-archive-keyring.gpg && \
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/gazebo-archive-keyring.gpg] \
